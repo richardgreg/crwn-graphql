@@ -6,6 +6,7 @@ import { PersistGate } from 'redux-persist/integration/react';
 import {ApolloProvider} from "react-apollo";
 import {createHttpLink} from "apollo-link-http";
 import {InMemoryCache} from "apollo-cache-inmemory";
+// import { ApolloClient } from "apollo-client";
 import {ApolloClient, gql} from "apollo-boost";
 
 import { store, persistor } from './redux/store';
@@ -27,7 +28,7 @@ const client = new ApolloClient({
 })
 
 ReactDOM.render(
-  <ApolloClient client={client}>
+  <ApolloProvider client={client}>
     <Provider store={store}>
       <BrowserRouter>
         <PersistGate persistor={persistor}>
@@ -35,6 +36,6 @@ ReactDOM.render(
         </PersistGate>
       </BrowserRouter>
     </Provider>
-  </ApolloClient>,
+  </ApolloProvider>,
   document.getElementById("root")
 );
