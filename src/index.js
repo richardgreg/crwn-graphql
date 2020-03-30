@@ -32,7 +32,8 @@ const client = new ApolloClient({
 // Use Apollo client to manage states
 client.writeData({
   data: {
-    cartHidden: true
+    cartHidden: true,
+    cartItems: []
   }
 });
 
