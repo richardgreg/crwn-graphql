@@ -4,7 +4,7 @@ import CustomButton from '../custom-button/custom-button.component';
 
 import './collection-item.styles.scss';
 
-const CollectionItem = ({ item, addItem }) => {
+const CollectionItem = ({ item, addItemToCart }) => {
   const { name, price, imageUrl } = item;
 
   return (
@@ -19,7 +19,7 @@ const CollectionItem = ({ item, addItem }) => {
         <span className='name'>{name}</span>
         <span className='price'>{price}</span>
       </div>
-      <CustomButton onClick={() => addItem(item)} inverted>
+      <CustomButton onClick={() => addItemToCart(item)} inverted>
         Add to cart
       </CustomButton>
     </div>
